@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Rtog</string>
+    <string name="title_activity_control__panel">Control Panel</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="dialectprompt">Standard/Dialect</string>
+</resources>
