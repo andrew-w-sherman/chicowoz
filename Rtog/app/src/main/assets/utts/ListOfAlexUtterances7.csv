@@ -1,0 +1,163 @@
+G1,Hi,,Hi,,,,,,,,,,,,,Alex_Hi,"start=""sp1:start"" end=""sp1:start+5.4""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+5.4""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'"
+G2,I'm Alex,,I'm Alex,,,,,,,,,,,,,Alex_Im_Alex,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'"
+G3,I'm in second grade,,I'm in second grade,,,,,,,,,,,,,Alex_Im_in_fifth_grade,"start=""sp1:start"" end=""sp1:start+2""","start=""sp1:start"" end=""sp1:start+2"""
+G4,I'm in third grade,,I'm in fird grade,,,,,,,,,,,,,Alex_Im_in_third_grade,"start=""sp1:start"" end=""sp1:start+1.4""","start=""sp1:start"" end=""sp1:start+1.3"""
+G5,I'm in fourth grade,,I'm in fourf grade,,,,,,,,,,,,,Alex_Im_in_fifth_grade,"start=""sp1:start"" end=""sp1:start+1.4""","start=""sp1:start"" end=""sp1:start+1.9"""
+G6,I'm in fifth grade,,I'm in fif' grade,,,,,,,,,,,,,Alex_Im_in_fifth_grade,"start=""sp1:start"" end=""sp1:start+1.5""","start=""sp1:start"" end=""sp1:start+1.8"""
+G7,I'm in sixth grade,,I'm in six grade,,,,,,,,,,,,,Alex_Im_in_third_grade,"start=""sp1:start"" end=""sp1:start+1.7""","start=""sp1:start"" end=""sp1:start+1.7"""
+G8,"I'm not real, remember?",,"I ain't real, 'member?",,,,,,,,,,,,,,,
+G9,I'm a girl,,I'm a girl,,,,,,,,,,,,,Alex_Im_Alex,"start=""sp1:start"" end=""sp1:start+1.8""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'"
+G10,I'm a boy,,I'm a boy,,,,,,,,,,,,,Alex_Im_Alex,"start=""sp1:start"" end=""sp1:start+1.6""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='2' amount='0.25' stroke='sp1:start+0' end='sp1:start+1'"
+G11,"I don't play any sports this year, but last year I played basketball.",,"I don't play no sports dis year, but last year I play basketball",,,,,,,,,,,,,Alex_I_dont_play_any_sports_this_year_but_last_year_I_played_basketball,"start=""sp1:start"" end=""sp1:start+4.2""/><face type='FACS' au='45' amount='1' stroke='sp1:start+.1' end='sp1:start+.9'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.1' end='sp1:start+.9'","start=""sp1:start"" end=""sp1:start+4""/><face type='FACS' au='45' amount='1' stroke='sp1:start+.1' end='sp1:start+.9'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.1' end='sp1:start+.9'"
+G12,"I do stuff, I'm just a computer person, too.",,"I do stuff, I'm jus' a computer person, too.",,,,,,,,,,,,,,,
+G13,I like it,,I like it,,,,,,,,,,,,,Alex_I_do,"start=""sp1:start"" end=""sp1:start+1.1""","start=""sp1:start"" end=""sp1:start+1"""
+G14,Not really,,Not really,,,,,,,,,,,,,,,
+G15,I love video games.,,I love video games,,,,,,,,,,,,,,,
+G16,Minecraft.,,Minecraft,,,,,,,,,,,,,Alex_I_do,"start=""sp1:start"" end=""sp1:start+1.2""","start=""sp1:start"" end=""sp1:start+1.2"""
+G17,You?,,You?,,,,,,,,,,,,,Alex_What_else,"start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+.9'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+.9'","start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+.9'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+.9'"
+G18,What about you?,,What bout you?,,,,,,,,,,,,,Alex_Whats_your_name,"start=""sp1:start"" end=""sp1:start+1.4""","start=""sp1:start"" end=""sp1:start+1.3"""
+G19,What's your name?,,Whas your name?,,,,,,,,,,,,,Alex_Whats_your_name,"start=""sp1:start"" end=""sp1:start+1.3""/><face type='FACS' au='45' amount='0.3' stroke='sp1:start+.1' end='sp1:start+.8'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+.1' end='sp1:start+.8'","start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='45' amount='0.3' stroke='sp1:start+.1' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0.1' end='sp1:start+1'"
+G20,What grade are you in?,,What grade you in?,,,,,,,,,,,,,Alex_Whats_your_name,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+.1' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0.1' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1.3""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+.1' end='sp1:start+1.'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0.1' end='sp1:start+1.'"
+G21,"Oh, cool.",,"Oh, cool.",,,,,,,,,,,,,Alex_Oh_cool,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='.35' stroke='sp1:start+0' end='sp1:start+.43'","start=""sp1:start"" end=""sp1:start+1.4""/><face type='FACS' au='2' amount='.35' stroke='sp1:start+0' end='sp1:start+.43'"
+G22,Mostly computer games.,,Mostly computer games.,,,,,,,,,,,,,,,
+G23,I have like teachers and stuff.,,I got like teachers and stuff.,,,,,,,,,,,,,,,
+G24,I guess I'm kind of like a game.,,I guess I'm kind of like a game.,,,,,,,,,,,,,,,
+G25,I like sports,,I like sports,,,,,,,,,,,,,Alex_Oh_cool,"start=""sp1:start"" end=""sp1:start+1.8""","start=""sp1:start"" end=""sp1:start+1.8"""
+G26,I have two little sisters,,I got two lil sister,,,,,,,,,,,,,,,
+G27,I've never done anything like this before,,I ain't never done nothing like dis before.,,,,,,,,,,,,,Alex_Ive_never_seen_any_creatures_like_these_before,"start=""sp1:start"" end=""sp1:start+2.5""/><face type='FACS' au='45' amount='1' stroke='sp1:start+.17' end='sp1:start+.9'","start=""sp1:start"" end=""sp1:start+2.5""/><face type='FACS' au='45' amount='1' stroke='sp1:start+.17' end='sp1:start+.9'"
+G28,What about you?,,What bout you?,,,,,,,,,,,,,Alex_Oh_why_curious,"start=""sp1:start"" end=""sp1:start+1.9""","start=""sp1:start"" end=""sp1:start+1.2"""
+G29,My teacher's making me do this.,,My teacher making me do dis.,,,,,,,,,,,,,,,
+G30,I guess,,I guess,,,,,,,,,,,,,Alex_Oh_why_curious,"start=""sp1:start"" end=""sp1:start+1.3""","start=""sp1:start"" end=""sp1:start+1.3"""
+G31,I guess I like science.,,I guess I like science.,,,,,,,,,,,,,Alex_like,"start=""sp1:start"" end=""sp1:start+3.6""/><face type='FACS' au='45' amount='.3' stroke='sp1:start+.1' end='sp1:start+1'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.1' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+2""/><face type='FACS' au='45' amount='.3' stroke='sp1:start+.1' end='sp1:start+1'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.1' end='sp1:start+1'"
+G32,It's okay.,,Is okay.,,,,,,,,,,,,,Alex_Uhhuh,"start=""sp1:start"" end=""sp1:start+1""","start=""sp1:start"" end=""sp1:start+1.2"""
+G33,My teacher's really nice.,,My teacher real nice,,,,,,,,,,,,,,,
+G34,Do you?,,Do you?,,,,,,,,,,,,,Alex_Oh_why_curious,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+.1' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0.1' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+.7""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+.7'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+.7'"
+G35,What's yours?,,Wha's yours?,,,,,,,,,,,,,Alex_Whats_your_name,"start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'"
+G36,What's yours?,,Wha's yours?,,,,,,,,,,,,,Alex_Whats_your_name,"start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1'"
+G37,Thanks!,,Thanks!,,,,,,,,,,,,,Alex_Oh_cool,"start=""sp1:start"" end=""sp1:start+1""","start=""sp1:start"" end=""sp1:start+.6"""
+G38,Me too.,,Me too.,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.9'"
+G39,Nuh-uh!,,Nuh uh,,,,,,,,,,,,,,,
+G40,Uh-huh!,,Uh uh,,,,,,,,,,,,,Alex_Uhhuh,"start=""sp1:start"" end=""sp1:start+1.6""","start=""sp1:start"" end=""sp1:start+1"""
+G41,I'm not sayin',,I ain't saying,,,,,,,,,,,,,Alex_Im_not_sure_disagreeing,"start=""sp1:start"" end=""sp1:start+2.3""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+2.3'/><face type='FACS' au='45' amount='.1' stroke='sp1:start+0' end='sp1:start+2.3'","start=""sp1:start"" end=""sp1:start+1.8""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.3'/><face type='FACS' au='45' amount='.1' stroke='sp1:start+0' end='sp1:start+1.3'"
+G42,Mine too.,,Mine too.,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.4""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.6""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G43,You too!,,You too!,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G44,Hmmm,,Hmmm,,,,,,,,,,,,,Alex_Hmmmmm,"start=""sp1:start"" end=""sp1:start+1.7""/><face type='FACS' au='45' amount='0.25' stroke='sp1:start+0' end='sp1:start+1.7'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1.7'","start=""sp1:start"" end=""sp1:start+1.7""/><face type='FACS' au='45' amount='0.25' stroke='sp1:start+0' end='sp1:start+1.7'/><face type='FACS' au='4' amount='0.4' stroke='sp1:start+0' end='sp1:start+1.7'"
+G45,Hm.,,Hm.,,,,,,,,,,,,,Alex_Hm,"start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+0' end='sp1:start+.9'/><face type='FACS' au='4' amount='0.3' stroke='sp1:start+0' end='sp1:start+.9'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='45' amount='0.4' stroke='sp1:start+.4' end='sp1:start+1.4'/><face type='FACS' au='4' amount='0.3' stroke='sp1:start+.4' end='sp1:start+1.4'"
+G46,Let me think,,Lemme fink,,,,,,,,,,,,,Alex_Let_me_think,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.45' end='sp1:start+1.5' /><face type='FACS' au='45' amount='.4' stroke='sp1:start+.45' end='sp1:start+1.5'","start=""sp1:start"" end=""sp1:start+1.3""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+.7' /><face type='FACS' au='45' amount='.4' stroke='sp1:start+0' end='sp1:start+.7'"
+G47,Well,,Well,,,,,,,,,,,,,Alex_Hm,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1' /><face type='FACS' au='45' amount='.4' stroke='sp1:start+0' end='sp1:start+1' ","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1' /><face type='FACS' au='45' amount='.4' stroke='sp1:start+0' end='sp1:start+1' "
+G48,Hah,,Hah,,,,,,,,,,,,,,,
+G49,Hahaha,,Hahaha,,,,,,,,,,,,,,,
+G50b,Yeah,,Yeah,,,,,,,,,,,,,,,
+G50,Yeah!,,Yeah!,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+.8""/><face type='FACS' au='2' amount='0.2' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+.8""/><face type='FACS' au='2' amount='0.2' stroke='sp1:start+0' end='sp1:start+.4'"
+G51,Yeah,,Yeah,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.2' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.2' stroke='sp1:start+0' end='sp1:start+.4'"
+G52,Uh-huh?,,Uh-huh?,,,,,,,,,,,,,Alex_Oh_why_curious,"start=""sp1:start"" end=""sp1:start+1.4""/><face type='FACS' au='2' amount='.1' stroke='sp1:start+0' end='sp1:start+.3'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.2' end='sp1:start+1'/><face type='FACS' au='45' amount='.4' stroke='sp1:start+.2' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1.4""/><face type='FACS' au='2' amount='.1' stroke='sp1:start+0' end='sp1:start+.3'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.2' end='sp1:start+1'/><face type='FACS' au='45' amount='.4' stroke='sp1:start+.2' end='sp1:start+1'"
+G53,Mhm,,Mhm,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+.5""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.5"""
+G54,Yeah ,,Yeah,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G55,Yeah ,,Yeah,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+1.1""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.5"""
+G56,Yep,,Yep,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+.8""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+1.8""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G57,I'm not sure,,I  ain't sure  ,,,,,,,,,,,,,Alex_Im_not_sure_answer,"start=""sp1:start"" end=""sp1:start+3.6""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.5'/><face type='FACS' au='45' amount='1' stroke='sp1:start+0.6' end='sp1:start+2'","start=""sp1:start"" end=""sp1:start+3.6""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+3.2'/><face type='FACS' au='45' amount='1' stroke='sp1:start+0.6' end='sp1:start+2'"
+G58,I'm not sure,,I ain't sure,,,,,,,,,,,,,Alex_Im_not_sure_answer,"start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.1'/><face type='FACS' au='45' amount='1' stroke='sp1:start+0.4' end='sp1:start+1.1'","start=""sp1:start"" end=""sp1:start+1.2""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.2'/><face type='FACS' au='45' amount='1' stroke='sp1:start+.4' end='sp1:start+1.2'"
+G59,Nah,,Nah,,,,,,,,,,,,,Alex_Im_not_sure_answer,,
+G60,No,,No,,,,,,,,,,,,,Alex_Im_not_sure_answer,,
+G61,I don't,,I don't,,,,,,,,,,,,,,,
+G62,I do,,I do,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+.9""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G63,Oooh,,Oooh,,,,,,,,,,,,,Alex_Oh,,
+G64,Oh,,Oh,,,,,,,,,,,,,Alex_Oh,"start=""sp1:start"" end=""sp1:start+.7""/><face type='FACS' au='4' amount='0.25' stroke='sp1:start+.25' end='sp1:start+.7'","start=""sp1:start"" end=""sp1:start+.7""/><face type='FACS' au='4' amount='0.25' stroke='sp1:start+.25' end='sp1:start+.7'"
+G65,That makes sense.,,Dat makes sense.,,,,,,,,,,,,,,,
+G66,Gotcha.,,Gotcha.,,,,,,,,,,,,,Alex_Yeah_agreeing,"start=""sp1:start"" end=""sp1:start+.7""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'","start=""sp1:start"" end=""sp1:start+.7""/><face type='FACS' au='2' amount='0.3' stroke='sp1:start+0' end='sp1:start+.4'"
+G67,"Oh, nevermind",,"Oh, nevermin'",,,,,,,,,,,,,,,
+G68,Probly like,,Prolly like,,,,,,,,,,,,,,,
+G69,You're crazy,,You crazy,,,,,,,,,,,,,,,
+G70,I'm not sure about that,,I ain't sure 'bout dat.,,,,,,,,,,,,,Alex_Im_not_sure_disagreeing,"start=""sp1:start"" end=""sp1:start+2""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.5'/><face type='FACS' au='45' amount='.1' stroke='sp1:start+0' end='sp1:start+1.4'","start=""sp1:start"" end=""sp1:start+1.7""/><face type='FACS' au='4' amount='.4' stroke='sp1:start+0' end='sp1:start+1.5'/><face type='FACS' au='45' amount='.1' stroke='sp1:start+0' end='sp1:start+1.4'"
+G71,"Yeah, that's right I think",,"Yeah, da'ss right I fink",,,,,,,,,,,,,,,
+G72,"Wait, I don't think",,"Wait, I don't fink",,,,,,,,,,,,,,,
+G73,"Yeah, I think so too.",,"Yeah, I fink so too.",,,,,,,,,,,,,Alex_Yeah_theyre_pretty_weird,"start=""sp1:start"" end=""sp1:start+2.4""/><face type='FACS' au='4' amount='.3' stroke='sp1:start+0' end='sp1:start+.7'/><face type='FACS' au='45' amount='.3' stroke='sp1:start+0' end='sp1:start+.7'","start=""sp1:start"" end=""sp1:start+1.7""/><face type='FACS' au='4' amount='.3' stroke='sp1:start+0' end='sp1:start+.7'/><face type='FACS' au='45' amount='.3' stroke='sp1:start+0' end='sp1:start+.7'"
+G74,Think we're done?,,Fink we done?,,,,,,,,,,,,,,,
+G75,I think we're done with this part now,,I fink we done with dis part now.,,,,,,,,,,,,,,,
+G76,I don't think they're gonna think we talked about it enough,,I don't fink they gonna fink we talk about it enough,,,,,,,,,,,,,,,
+G77,I guess it's our job to figure this stuff out.,,I guess i'ss our job to figure dis stuff out.,,,,,,,,,,,,,,"start=""sp1:start"" end=""sp1:start+3.2""","start=""sp1:start"" end=""sp1:start+2.55"""
+G78,Oookay. Any ideas?,,Oookay. Any ideas?,,,,,,,,,,,,,Alex_Any_other_ideas,"start=""sp1:start"" end=""sp1:start+3.5""/><face type='FACS' au='2' amount='.3' stroke='sp1:start+1.1' end='sp1:start+1.8'","start=""sp1:start"" end=""sp1:start+2.8""/><face type='FACS' au='2' amount='.3' stroke='sp1:start+1.1' end='sp1:start+1.8'"
+G79,Hmm.. I think we got all of it.,,Hmm I fink we done got all of it.,,,,,,,,,,,,,, ,
+G80,"I think now we have to, um, come up with our presentations. For the teacher.",,"I fink now we gotta, um, come up wif our presentations. For the teacher.",,,,,,,,,,,,,,,
+,"Okay, I think it's time for us to have to do the teacher presentation part.",,"Okay, I fink i'ss time for us to have to do the teacher presentation part.",,,,,,,,,,,,,,,
+G81,Think it's time for the presentation part?,,Fink is time for the presentation part?,,,,,,,,,,,,,,,
+G82,I can go first.,,I can go first,,,,,,,,,,,,,,,
+G83,I think we just have to like say the ideas we came up with.,,I fink we just gotta like say the ideas we came up wif.,,,,,,,,,,,,,,,
+G84,My teacher says she's grading mine,,My teacher say she gradin' mine,,,,,,,,,,,,,,,
+G85,I'm going to try and do a good job on it. ,,I'mma try and do a good job on it. ,,,,,,,,,,,,,,,
+G86,Your turn?,,Your turn?,,,,,,,,,,,,,Alex_Oh_why_curious,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='.1' stroke='sp1:start+0' end='sp1:start+.2'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.2' end='sp1:start+1.4'/><face type='FACS' au='45' amount='.4' stroke='sp1:start+.2' end='sp1:start+1.4'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='.1' stroke='sp1:start+0' end='sp1:start+.2'/><face type='FACS' au='4' amount='.4' stroke='sp1:start+.2' end='sp1:start+1.4'/><face type='FACS' au='45' amount='.4' stroke='sp1:start+.2' end='sp1:start+1.4'"
+G87,"Oookay. That was embarrassing, haha.",,Oookay. Dat was embarrassing haha.,,,,,,,,,,,,,,,
+G88,I think basically just like the stuff we talked about.,,I fink basically just like the stuff we talk about.,,,,,,,,,,,,,,,
+G89,"Okay, let me think for a minute and figure out what I'm gonna say",,"Okay, lemme fink for a minute and figure out what I'mma say",,,,,,,,,,,,,,,
+G90,Because,,Cuz  ,,,,,,,,,,,,,Alex_Oh,,
+G91,and,,and,,,,,,,,,,,,,Alex_Oh,,
+G92b,See ya!,,See ya!,,,,,,,,,,,,,,,
+G92a,See ya!,,See ya!,,,,,,,,,,,,,Alex_Hi,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'"
+G93b,Bye!,,Bye!,,,,,,,,,,,,,,,
+G93a,Bye!,,Bye!,,,,,,,,,,,,,Alex_Hi,"start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'","start=""sp1:start"" end=""sp1:start+1.5""/><face type='FACS' au='2' amount='0.4' stroke='sp1:start' end='sp1:start+1'"
+G94,See ya next time.,,See ya nex' time.,,,,,,,,,,,,,,,
+G95,You wanna go?,,You wanna go?,,,,,,,,,,,,,,,
+G96,Nope,,Nope,,,,,,,,,,,,,,,
+G97,Yeah okay nevermind,,Yeah okay nevermind,,,,,,,,,,,,,,,
+G98,I think we're done,,I think we done,,,,,,,,,,,,,,,
+G99,That's just how I talk,,That's just how I talk,,,,,,,,,,,,,,,
+G100,,,,,,,,,,,,,,,,,,
+G101,Okay I think it's time for us to do the teacher presentation part,,Okay I think it's time for us to do the teacher presentation part,,,,,,,,,,,,,,,
+G102,Do you wanna go?,,You wanna go?,,,,,,,,,,,,,,,
+G103,All right now do you wanna go?,,All right you wanna go?,,,,,,,,,,,,,,,
+G104,What does it matter to you?,,What's it matter to you?,,,,,,,,,,,,,,,
+G106,hehehehehehehe,,hehehehehehehe,,,,,,,,,,,,,,,
+G107,yuh huh,,yuh huh,,,,,,,,,,,,,,,
+G108,No you are,,No you are,,,,,,,,,,,,,,,
+G109,Yeah thanks,,Yeah thanks,,,,,,,,,,,,,,,
+G110,Um okay,,Um okay,,,,,,,,,,,,,,,
+G111,Is not,,Is not,,,,,,,,,,,,,,,
+G112,Is so,,Is so,,,,,,,,,,,,,,,
+G113,Yeah it does,,Yeah it do,,,,,,,,,,,,,,,
+G114,Uh huh,,Uh huh,,,,,,,,,,,,,,,
+G115,Big Hero Six,,Big Hero Six,,,,,,,,,,,,,,,
+G116,Yeah I just saw it,,Yeah I just saw it,,,,,,,,,,,,,,,
+G117,Yeah last weekend,,Yeah last weekend,,,,,,,,,,,,,,,
+G118,Breonna,,Breonna,,,,,,,,,,,,,,,
+G119,Breonna and Lonny,,Breonna and Lonny,,,,,,,,,,,,,,,
+G120,I think we need to go back and do this thing now,,I think we need to go back and do this thing now,,,,,,,,,,,,,,,
+G121,I think we're doing good,,I think we doing good,,,,,,,,,,,,,,,
+G122,Cool,,Cool,,,,,,,,,,,,,,,
+G108,Yeah thanks,,Yeah thanks,,,,,,,,,,,,,,,
+AT1a,"Wait, I wanna make sure I get it","Wait, I wanna make sure I get it","Wait, I wanna make sure I get it",,,,,,,,,,,,,AT1v,"start=""sp1:start"" end=""sp1:start+1.93""",
+AT1b,"Wait, I wanna make sure I get it","Wait, I wanna make sure I get it","Wait, I wanna make sure I get it",,,,,,,,,,,,,,,
+AT1c,"Wait, I wanna make sure I get it","Wait, I wanna make sure I get it","Wait, I wanna make sure I get it",,,,,,,,,,,,,,,
+AT2a,Is that the same thing as like,Is that the same thing as like,Is dat the same fing as like,,,,,,,,,,,,,,,
+AT2b,Is that the same thing as like,Is that the same thing as like,Is dat the same fing as like,,,,,,,,,,,,,AT2v,"start=""sp1:start"" end=""sp1:start+3.5""",
+AT3a,So wait then is it like,So wait den is it like,So wait den is it like,,,,,,,,,,,,,AT3v,"start=""sp1:start"" end=""sp1:start+3.9""",
+AT3b,So wait then is it like,So wait den is it like,So wait den is it like,,,,,,,,,,,,,,,
+AT4a,"So wait, are you saying","So wait, you sayin'","So wait, you sayin'",,,,,,,,,,,,,,,
+AT4b,"So wait, are you saying","So wait, you sayin'","So wait, you sayin'",,,,,,,,,,,,,AT4v,"start=""sp1:start"" end=""sp1:start+4.2""",
+AT5a,Oh why?,Oh why?,Oh why?,,,,,,,,,,,,,,,
+AT5b,Oh why?,Oh why?,Oh why?,,,,,,,,,,,,,,,
+AT5c,Oh why?,Oh why?,Oh why?,,,,,,,,,,,,,,,
+AT5d,Oh why?,Oh why?,Oh why?,,,,,,,,,,,,,AT5v,"start=""sp1:start"" end=""sp1:start+2""",
+AT6a,"Wait, why is that?","Wait, why dat?","Wait, why dat?",,,,,,,,,,,,,,,
+AT6b,"Wait, why is that?","Wait, why dat?","Wait, why dat?",,,,,,,,,,,,,,,
+AT6c,"Wait, why is that?","Wait, why dat?","Wait, why dat?",,,,,,,,,,,,,,,
+AT6d,"Wait, why is that?","Wait, why dat?","Wait, why dat?",,,,,,,,,,,,,AT6v,"start=""sp1:start"" end=""sp1:start+2.3""",
+AT7,How do you know?,How you know?,How you know?,,,,,,,,,,,,,AT7v,"start=""sp1:start"" end=""sp1:start+1.4""",
+AT8,How d'you think?,How d'you fink?,How d'you fink?,,,,,,,,,,,,,AT8v,"start=""sp1:start"" end=""sp1:start+1.2""",
+AT9,But,But,But,,,,,,,,,,,,,AT9v,"start=""sp1:start"" end=""sp1:start+.9""",
+AT10a,"But what if, like","But what if, like","But what if, like",,,,,,,,,,,,,,,
+AT10b,"But what if, like","But what if, like","But what if, like",,,,,,,,,,,,,AT10v,"start=""sp1:start"" end=""sp1:start+2.7""",
+AT11,Maybe sometimes,Maybe sometimes,Maybe sometimes,,,,,,,,,,,,,AT11v,"start=""sp1:start"" end=""sp1:start+2.7""",
+AT12,"Well, I was thinking about that too, but","Well, I was finking 'bout dat too, but","Well, I was finking 'bout dat too, but",,,,,,,,,,,,,AT12v,"start=""sp1:start"" end=""sp1:start+4""",
+AT13a,But what about when like,But what about when like,But what about when like,,,,,,,,,,,,,,,
+AT13b,But what about when like,But what about when like,But what about when like,,,,,,,,,,,,,AT13v,"start=""sp1:start"" end=""sp1:start+3""",
+AT14,"Do you think so too, or no?","You fink so too, or no?","You fink so too, or no?",,,,,,,,,,,,,AT14v,"start=""sp1:start"" end=""sp1:start+3.5""",
+AT15,Do you think any other different things though?,You fink any ovher diff'ren' fings though,You fink any ovher diff'ren' fings though,,,,,,,,,,,,,AT15v,"start=""sp1:start"" end=""sp1:start+2.2""",
+AT16,"Do you agree or, um, disagree with that?","Do you agree or, um, disagree wif dat?","Do you agree or, um, disagree wif dat?",,,,,,,,,,,,,AT16v,"start=""sp1:start"" end=""sp1:start+4.2""",
+AT17a,I'm not sure about it though. What do you think?,I ain't sure about it though  Whatchu you fink?,I ain't sure about it though  Whatchu you fink?,,,,,,,,,,,,,,,
+AT17b,I'm not sure about it though. What do you think?,I ain't sure about it though  Whatchu you fink?,I ain't sure about it though  Whatchu you fink?,,,,,,,,,,,,,AT17v,"start=""sp1:start"" end=""sp1:start+3.1""",
+AT18,Any other ideas?,Any ovher ideas?,Any ovher ideas?,,,,,,,,,,,,,AT18v,"start=""sp1:start"" end=""sp1:start+1.5""",
+AT19,What else,What else,What else,,,,,,,,,,,,,AT19v,"start=""sp1:start"" end=""sp1:start+2.4""",
+AT20,Why?,Why?,Why?,,,,,,,,,,,,,,,
+AT22a,What do you think?,What do you think?,Whatchu fink?,,,,,,,,,,,,,,,
+AT22b,What do you think?,What do you think?,Whatchu fink?,,,,,,,,,,,,,,,
+AT23,Wait why?,,Wait why?,,,,,,,,,,,,,,,
