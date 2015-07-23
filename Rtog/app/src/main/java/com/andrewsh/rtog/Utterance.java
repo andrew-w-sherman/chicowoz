@@ -4,10 +4,11 @@
 
 package com.andrewsh.rtog;
 
-import java.util.Dictionary;
 import java.util.HashMap;
 
 public class Utterance {
+    private static final boolean LONG_COMMAND_NAMES = true;
+
     public HashMap<String, String> baseDict = new HashMap<>();
 
     public String diaText;
@@ -59,12 +60,17 @@ public class Utterance {
 
     }
 
-    public String stdAudioName() {
-        return rootName + "-s.wav";
+    public String commandName(boolean isStd) {
+        if(LONG_COMMAND_NAMES)
+            return getLongName(stdText, !isStd);
+        if(isStd)
+            return rootName + "-s";
+        return rootName + "-v";
     }
 
-    public String diaAudioName() {
-        return rootName + "-v.wav";
+    private static String getLongName(String text, boolean aae) {
+        return text.replaceAll("[^a-zA-Z ]", "").replace(' ', '_') +
+                (aae ? "_aae" : "");
     }
 
     /*

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:key="pref_ip"
+        android:title="@string/pref_ip"
+        android:summary="@string/pref_ip_summ"
+        android:defaultValue="wall-e.hcii.cs.cmu.edu" />
+    <EditTextPreference
+        android:inputType="number"
+        android:key="pref_port"
+        android:title="@string/pref_port"
+        android:summary="@string/pref_port_summ"
+        android:defaultValue="11111" />
+</PreferenceScreen>

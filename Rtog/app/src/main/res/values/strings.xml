@@ -2,6 +2,15 @@
     <string name="app_name">Rtog</string>
     <string name="title_activity_control__panel">Control Panel</string>
     <string name="action_settings">Settings</string>
+    <string name="button_default">THIS BUTTON IS BLANK!</string>
 
     <string name="dialectprompt">Standard/Dialect</string>
+
+    <string name="pref_ip">Server Address</string>
+    <string name="pref_ip_summ">The address of the server you\'d like to connect to.</string>
+    <string name="pref_port">Server Port</string>
+    <string name="pref_port_summ">The port you\'d like to connect on. This will almost certainly be \"11111\".</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>

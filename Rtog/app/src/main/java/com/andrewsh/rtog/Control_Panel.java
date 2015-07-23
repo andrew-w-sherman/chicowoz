@@ -1,8 +1,10 @@
 package com.andrewsh.rtog;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Control_Panel extends Activity {
@@ -23,6 +26,9 @@ public class Control_Panel extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control__panel);
+        client = new WoZClient();
+        // TODO: change this to a settings-based system
+        client.setIp("wall-e.hcii.cs.cmu.edu");
         readUtts();
         for (int page : INCLUDE_PAGES) {
             // put the utterances from the page into includedUtts
@@ -31,6 +37,74 @@ public class Control_Panel extends Activity {
         pickUtts();
         changeButtons(true);
     }
+
+
+    private void changeButtons(boolean toStd) {
+        buttons = new Button[5];
+        buttons[0] = (Button) findViewById(R.id.b1);
+        buttons[1] = (Button) findViewById(R.id.b2);
+        buttons[2] = (Button) findViewById(R.id.b3);
+        buttons[3] = (Button) findViewById(R.id.b4);
+        buttons[4] = (Button) findViewById(R.id.b5);
+        String utterance;
+        for (int i = 0; i < 5; i++) {
+            if (toStd) {
+                utterance = pickedUtts.get(i).stdText;
+            }
+            else {
+                utterance = pickedUtts.get(i).diaText;
+            }
+            buttons[i].setText(utterance.toCharArray(), 0, utterance.length());
+        }
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_control__panel, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public void dialectToggleClick(View view) {
+        // is it standard?
+        boolean isStd = !((Switch) view).isChecked();
+
+        changeButtons(isStd);
+    }
+
+    public void buttonClick(View view) {
+        boolean isStd = !((Switch) findViewById(R.id.dialecttoggle)).isChecked();
+
+        // not sure if this will find it properly
+        int clickedButton = Arrays.asList(buttons).indexOf(view);
+        Utterance pickedUtt = pickedUtts.get(clickedButton);
+        String audioName = pickedUtt.commandName(isStd);
+
+        client.sendCommand(audioName);
+    }
+
+    private WoZClient client;
+    private Button[] buttons;
+    private String[][][] uttWorkbook;
+    private ArrayList<Utterance> includedUtts = new ArrayList<Utterance>();
+    private ArrayList<Utterance> pickedUtts = new ArrayList<Utterance>();
 
     private void pickUtts() {
         Random ran = new Random();
@@ -52,25 +126,6 @@ public class Control_Panel extends Activity {
             utts.add(new Utterance(legend, page[i]));
         }
         return utts;
-    }
-
-    private void changeButtons(boolean toStd) {
-        buttons = new Button[5];
-        buttons[0] = (Button) findViewById(R.id.b1);
-        buttons[1] = (Button) findViewById(R.id.b2);
-        buttons[2] = (Button) findViewById(R.id.b3);
-        buttons[3] = (Button) findViewById(R.id.b4);
-        buttons[4] = (Button) findViewById(R.id.b5);
-        String utterance;
-        for (int i = 0; i < 5; i++) {
-            if (toStd) {
-                utterance = pickedUtts.get(i).stdText;
-            }
-            else {
-                utterance = pickedUtts.get(i).diaText;
-            }
-            buttons[i].setText(utterance.toCharArray(), 0, utterance.length());
-        }
     }
 
     private void readUtts() {
@@ -103,40 +158,6 @@ public class Control_Panel extends Activity {
     }
 
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_control__panel, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    public void dialectToggleClick(View view) {
-        // is it standard?
-        boolean isStd = !((Switch) view).isChecked();
-
-        changeButtons(isStd);
-    }
-
-    private Button[] buttons;
-    private String[][][] uttWorkbook;
-    private ArrayList<Utterance> includedUtts = new ArrayList<Utterance>();
-    private ArrayList<Utterance> pickedUtts = new ArrayList<Utterance>();
 
     /*
     // this is sort of a workaround, the utterance list starts in /assets
