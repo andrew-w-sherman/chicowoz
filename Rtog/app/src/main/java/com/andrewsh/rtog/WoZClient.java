@@ -1,6 +1,8 @@
 package com.andrewsh.rtog;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.preference.PreferenceManager;
 import android.util.Log;
 
 import java.io.OutputStreamWriter;
@@ -16,17 +18,16 @@ import java.io.BufferedWriter;
 public class WoZClient {
     private static final boolean DEBUG = true;
     private String ip;
-    private static final int DEFAULT_PORT = 11111;
+    private static final String DEFAULT_ADDR = "wall-e.hcii.cs.cmu.edu";
+    private static final String DEFAULT_PORT = "11111";
     private int port;
+    SharedPreferences prefs;
 
-    public WoZClient() {
-        ip = "";
-        port = DEFAULT_PORT;
+    public WoZClient(SharedPreferences preferences) {
+        ip = DEFAULT_ADDR;
+        port = Integer.parseInt(DEFAULT_PORT);
+        prefs = preferences;
     }
-
-    public void setPort(int newPort){ port = newPort; }
-
-    public void setIp(String newIP) { ip = newIP; }
 
     public void sendCommand(final String cmd) {
         if(DEBUG) {
@@ -36,6 +37,8 @@ public class WoZClient {
         new AsyncTask<String, Void, Exception>() {
             @Override protected Exception doInBackground(String... params) {
                 Exception result = null;
+                ip = prefs.getString("pref_ip", DEFAULT_ADDR);
+                port = Integer.parseInt(prefs.getString("pref_port", DEFAULT_PORT));
                 try {
                     InetAddress serverAdd = InetAddress.getByName(ip);
                     Log.d("Network", " Attempting to connect to " + serverAdd);

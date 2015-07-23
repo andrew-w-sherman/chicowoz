@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
-import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,9 +26,9 @@ public class Control_Panel extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_control__panel);
-        client = new WoZClient();
+        client = new WoZClient(PreferenceManager
+                .getDefaultSharedPreferences(this));
         // TODO: change this to a settings-based system
-        client.setIp("wall-e.hcii.cs.cmu.edu");
         readUtts();
         for (int page : INCLUDE_PAGES) {
             // put the utterances from the page into includedUtts
