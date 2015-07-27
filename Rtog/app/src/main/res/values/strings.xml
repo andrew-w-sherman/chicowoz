@@ -13,4 +13,8 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <string name="hello_world">Hello world!</string>
+    <string name="title_activity_chi_co_wo_z">ChiCoWoZ</string>
+
+    <string name="standard_text">Standard</string>
+    <string name="dialect_text">Dialect</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.andrewsh.rtog;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.res.AssetManager;
@@ -8,8 +9,10 @@ import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Switch;
+import android.widget.LinearLayout;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,14 +21,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Control_Panel extends Activity {
+public class Control_Panel_old extends Activity {
 
     private static final int[] INCLUDE_PAGES = {1};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_control__panel);
+        setContentView(R.layout.activity_control__panel_old);
+        makeButtons();
         client = new WoZClient(PreferenceManager
                 .getDefaultSharedPreferences(this));
         // TODO: change this to a settings-based system
@@ -38,16 +42,32 @@ public class Control_Panel extends Activity {
         changeButtons(true);
     }
 
+    private void makeButtons() {
+        buttons = new Button[5];
+        final LinearLayout root = (LinearLayout) findViewById(R.id.linearMain);
+        String textDef = getString(R.string.button_default);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ViewGroup.LayoutParams.MATCH_PARENT
+        );
+        for (int i = 0; i < buttons.length; i++) {
+            Button button = new Button(this);
+            button.setText(textDef.toCharArray(), 0, textDef.length());
+            button.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    buttonClick(v);
+                }
+            });
+            button.setLayoutParams(params);
+            buttons[i] = button;
+            root.addView(button);
+        }
+    }
 
     private void changeButtons(boolean toStd) {
-        buttons = new Button[5];
-        buttons[0] = (Button) findViewById(R.id.b1);
-        buttons[1] = (Button) findViewById(R.id.b2);
-        buttons[2] = (Button) findViewById(R.id.b3);
-        buttons[3] = (Button) findViewById(R.id.b4);
-        buttons[4] = (Button) findViewById(R.id.b5);
         String utterance;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < buttons.length; i++) {
             if (toStd) {
                 utterance = pickedUtts.get(i).stdText;
             }
@@ -103,8 +123,8 @@ public class Control_Panel extends Activity {
     private WoZClient client;
     private Button[] buttons;
     private String[][][] uttWorkbook;
-    private ArrayList<Utterance> includedUtts = new ArrayList<Utterance>();
-    private ArrayList<Utterance> pickedUtts = new ArrayList<Utterance>();
+    private ArrayList<Utterance> includedUtts = new ArrayList<>();
+    private ArrayList<Utterance> pickedUtts = new ArrayList<>();
 
     private void pickUtts() {
         Random ran = new Random();
@@ -121,7 +141,7 @@ public class Control_Panel extends Activity {
         // TODO: this will assume that the first row is a legend
         // should add some sort of test perhaps?
         String[] legend = page[0];
-        ArrayList<Utterance> utts = new ArrayList<Utterance>();
+        ArrayList<Utterance> utts = new ArrayList<>();
         for (int i = 1; i < page.length; i++) {
             utts.add(new Utterance(legend, page[i]));
         }
@@ -157,61 +177,6 @@ public class Control_Panel extends Activity {
         }
     }
 
-
-
-    /*
-    // this is sort of a workaround, the utterance list starts in /assets
-    // and then gets moved to the files dir so it's super easy to work with
-    private void fetchUtts() {
-        if (Arrays.asList(this.getFilesDir().list()).contains("utts.txt"))
-            return;
-        String uttsStr = null;
-        try {
-            InputStream is = getAssets().open("utts.txt");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            uttsStr = new String(buffer, "UTF-8");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-            uttsStr = "";
-        }
-        File file = new File(getFilesDir(), "utts.txt");
-        PrintWriter pw;
-        try {
-            pw = new PrintWriter(file);
-            pw.print(uttsStr);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    */
-    /*
-    private void readUtts() {
-        String uttsStr = null;
-        try {
-            InputStream is = getAssets().open("utts.txt");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            uttsStr = new String(buffer, "UTF-8");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
-        String[] uttsArr = uttsStr.split("\n");
-        stdUtts = new String[uttsArr.length / 2];
-        diaUtts = new String[uttsArr.length / 2];
-        for (int i =  0; i < uttsArr.length / 2; i++) {
-            stdUtts[i] = uttsArr[i * 2];
-            diaUtts[i] = uttsArr[i * 2 + 1];
-        }
-    }
-    */
-
     private String[][] parseCSV(String text) {
         String[] lines = text.split("\n");
         String[][] cells = new String[lines.length][];
@@ -219,17 +184,15 @@ public class Control_Panel extends Activity {
             String cell = "";
             boolean inQuotes = false;
             char[] line = lines[i].toCharArray();
-            ArrayList<String> row = new ArrayList<String>();
-            for (int j = 0; j < line.length; j++) {
-                if (line[j] == '"') {
+            ArrayList<String> row = new ArrayList<>();
+            for (char c : line) {
+                if (c == '"') {
                     inQuotes = !inQuotes;
-                }
-                else if (line[j] == ',' && !inQuotes) {
+                } else if (c == ',' && !inQuotes) {
                     row.add(cell);
                     cell = "";
-                }
-                else {
-                    cell += line[j];
+                } else {
+                    cell += c;
                 }
             }
             cells[i] = row.toArray(new String[row.size()]);

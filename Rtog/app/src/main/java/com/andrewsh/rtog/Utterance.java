@@ -15,6 +15,7 @@ public class Utterance {
     public String stdText;
     public String rootName;
     public String gesture;
+    public String category;
     /*
     public String args;
     public String aaeArgs;
@@ -42,6 +43,7 @@ public class Utterance {
         stdText = baseDict.get("SBE_Utterance_Analysis");
         diaText = baseDict.get("AAVE_Utterance_BML");
         gesture = baseDict.get("Gesture");
+        category = baseDict.get("Category");
         /*
         args = row[5];
         aaeArgs = row[6];
