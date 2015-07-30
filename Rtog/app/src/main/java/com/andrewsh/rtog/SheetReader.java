@@ -31,6 +31,8 @@ public class SheetReader {
         }
         // categorize and return
         ArrayList<ArrayList<Utterance>> uttCat = new ArrayList<>();
+        for ( int i = 0; i < categories.length; i++ )
+            uttCat.add(new ArrayList<Utterance>());
         for (Utterance utt : uttList) {
             int catIndex = Arrays.asList(categories).indexOf(utt.category);
             uttCat.get(catIndex).add(utt);
@@ -67,6 +69,7 @@ public class SheetReader {
         return uttWB;
     }
 
+    /*
     private String[][] parseCSV(String text) {
         String[] lines = text.split("\n");
         String[][] cells = new String[lines.length][];
@@ -81,12 +84,43 @@ public class SheetReader {
                 } else if (c == ',' && !inQuotes) {
                     row.add(cell);
                     cell = "";
-                } else {
+                } else if (c == '\n' ) else {
                     cell += c;
                 }
             }
             cells[i] = row.toArray(new String[row.size()]);
         }
         return cells;
+    }
+    */
+
+    private String[][] parseCSV(String text) {
+        char[] textC = text.toCharArray();
+        boolean inQuotes = false;
+        String cell = "";
+        ArrayList<String> row = new ArrayList<>();
+        ArrayList<String[]> sheet = new ArrayList<>();
+        for (char c : textC) {
+            if (c == '"') {
+                inQuotes = !inQuotes;
+            } else if (c == ',' && !inQuotes) {
+                // new cell
+                row.add(cell);
+                cell = "";
+            } else if (c == '\n' && inQuotes) {
+                // do nothing
+            } else if (c == '\n') {
+                // new line
+                row.add(cell);
+                cell = "";
+                sheet.add(row.toArray(new String[row.size()]));
+                row = new ArrayList<>();
+            } else if (c == '\r') {}
+            else {
+                // add c to cell
+                cell += c;
+            }
+        }
+        return sheet.toArray(new String[sheet.size()][]);
     }
 }

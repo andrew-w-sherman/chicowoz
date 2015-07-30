@@ -1,7 +1,9 @@
 package com.andrewsh.rtog;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
+import java.util.Random;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -56,7 +58,7 @@ public class ChiCoWoZ extends Activity {
         SheetReader sr = new SheetReader(this.getAssets(), "utts");
         ArrayList<ArrayList<Utterance>> pageUtts;
         for ( int pageNum : INCLUDE_PAGES ) {
-            pageUtts = sr.readSheet(pageNum, CATEGORIES);
+            pageUtts = sr.readSheet(pageNum - 1, CATEGORIES);
             for ( int i = 0; i < CATEGORIES.length; i++ ) {
                 includedUtts.get(i).addAll(pageUtts.get(i));
             }
@@ -65,7 +67,6 @@ public class ChiCoWoZ extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chicowoz);
 
-        diaToggle(findViewById(R.id.standard_button));
 
         tabLayout = new TabLayout(this);
         for ( String category : CATEGORIES ) {
@@ -93,6 +94,7 @@ public class ChiCoWoZ extends Activity {
                     tabLayout.newTab()
                             .setText(mSectionsPagerAdapter.getPageTitle(i)));
         }
+        diaToggle(findViewById(R.id.standard_button));
     }
 
     private void pickUtts() {
@@ -100,6 +102,16 @@ public class ChiCoWoZ extends Activity {
         for (int i = 0; i < CATEGORIES.length; i++) {
             if(includedUtts.get(i).size() < BUTTONS_PER_PAGE)
                 new Exception().printStackTrace();
+        }
+        Random ran = new Random();
+        for (int i = 0; i < CATEGORIES.length; i++) {
+            Utterance pick;
+            for ( int j = 0; j < BUTTONS_PER_PAGE; j++ ) {
+                do {
+                    pick = includedUtts.get(i).get(ran.nextInt(includedUtts.get(i).size()));
+                } while (Arrays.asList(pickedUtts[i]).contains(pick));
+                pickedUtts[i][j] = pick;
+            }
         }
     }
 
