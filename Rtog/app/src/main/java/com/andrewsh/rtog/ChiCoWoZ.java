@@ -68,7 +68,7 @@ public class ChiCoWoZ extends Activity {
         setContentView(R.layout.activity_chicowoz);
 
 
-        tabLayout = new TabLayout(this);
+        tabLayout = (TabLayout) findViewById(R.id.category_tabs);
         for ( String category : CATEGORIES ) {
             tabLayout.addTab(tabLayout.newTab().setText(category));
         }
