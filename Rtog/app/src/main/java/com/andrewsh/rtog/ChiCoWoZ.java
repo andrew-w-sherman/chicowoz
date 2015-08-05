@@ -5,12 +5,13 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.Random;
 
-import android.app.Activity;
 import android.app.ActionBar;
-import android.app.Fragment;
-import android.app.FragmentManager;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
+import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -22,7 +23,7 @@ import android.widget.Button;
 import android.support.design.widget.TabLayout;
 
 
-public class ChiCoWoZ extends Activity {
+public class ChiCoWoZ extends FragmentActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -49,7 +50,7 @@ public class ChiCoWoZ extends Activity {
     private static final int[] INCLUDE_PAGES = {1};
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         frags = new CategoryFragment[CATEGORIES.length];
         pickedUtts = new Utterance[CATEGORIES.length][BUTTONS_PER_PAGE];
         includedUtts = new ArrayList<>();
@@ -68,19 +69,23 @@ public class ChiCoWoZ extends Activity {
         setContentView(R.layout.activity_chicowoz);
 
 
+        /*
         tabLayout = (TabLayout) findViewById(R.id.category_tabs);
         for ( String category : CATEGORIES ) {
             tabLayout.addTab(tabLayout.newTab().setText(category));
         }
+        */
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager());
+        mSectionsPagerAdapter = new
+                SectionsPagerAdapter(getSupportFragmentManager());
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+        /*
         mViewPager.addOnPageChangeListener(
                 new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
@@ -94,6 +99,7 @@ public class ChiCoWoZ extends Activity {
                     tabLayout.newTab()
                             .setText(mSectionsPagerAdapter.getPageTitle(i)));
         }
+        */
         diaToggle(findViewById(R.id.standard_button));
     }
 
@@ -157,10 +163,11 @@ public class ChiCoWoZ extends Activity {
     }
 
     /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * A {@link FragmentStatePagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+    // TODO: move this outside?
+    public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);
@@ -168,9 +175,10 @@ public class ChiCoWoZ extends Activity {
 
         @Override
         public Fragment getItem(int position) {
-            // getItem is called to instantiate the fragment for the given page.
-            // Return a PlaceholderFragment (defined as a static inner class below).
-            Fragment newFrag = CategoryFragment.newInstance(CATEGORIES[position]);
+            Fragment newFrag = new CategoryFragment();
+            Bundle args = new Bundle();
+            args.putString(CategoryFragment.ARG_CATEGORY_NAME, CATEGORIES[position]);
+            newFrag.setArguments(args);
             frags[position] = (CategoryFragment) newFrag;
             return newFrag;
         }
@@ -191,9 +199,7 @@ public class ChiCoWoZ extends Activity {
         }
     }
 
-    /**
-     * A placeholder fragment containing a simple view.
-     */
+    // TODO: move this outside?
     public static class CategoryFragment extends Fragment {
 
         Button[] buttons;
@@ -208,6 +214,7 @@ public class ChiCoWoZ extends Activity {
          * Returns a new instance of this fragment for the given section
          * number.
          */
+        /*
         public static CategoryFragment newInstance(String categoryName) {
             CategoryFragment fragment = new CategoryFragment();
             Bundle args = new Bundle();
@@ -218,6 +225,7 @@ public class ChiCoWoZ extends Activity {
 
         public CategoryFragment() {
         }
+        */
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
