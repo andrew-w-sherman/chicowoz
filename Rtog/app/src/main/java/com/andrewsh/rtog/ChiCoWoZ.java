@@ -2,17 +2,18 @@ package com.andrewsh.rtog;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-import android.app.ActionBar;
+import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,9 +22,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Button;
 import android.support.design.widget.TabLayout;
+import android.support.v7.widget.Toolbar;
 
 
-public class ChiCoWoZ extends FragmentActivity {
+public class ChiCoWoZ extends AppCompatActivity {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -33,7 +35,7 @@ public class ChiCoWoZ extends FragmentActivity {
      * may be best to switch to a
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
-    SectionsPagerAdapter mSectionsPagerAdapter;
+    Adapter mSectionsPagerAdapter;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -44,13 +46,14 @@ public class ChiCoWoZ extends FragmentActivity {
     Utterance[][] pickedUtts;
     ArrayList<ArrayList<Utterance>> includedUtts;
 
-    private static final int BUTTONS_PER_PAGE = 5;
-    private static final String[] CATEGORIES =
+    public static final int BUTTONS_PER_PAGE = 5;
+    public static final String[] CATEGORIES =
         {"Questions", "Feedback", "Ideas"};
     private static final int[] INCLUDE_PAGES = {1};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        // BACKGROUND LOGIC
         frags = new CategoryFragment[CATEGORIES.length];
         pickedUtts = new Utterance[CATEGORIES.length][BUTTONS_PER_PAGE];
         includedUtts = new ArrayList<>();
@@ -65,42 +68,21 @@ public class ChiCoWoZ extends FragmentActivity {
             }
         }
         pickUtts();
+
+        // VIEWS
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chicowoz);
+        Toolbar tb = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(tb);
+        final ActionBar ab = getSupportActionBar();
 
-
-        /*
-        tabLayout = (TabLayout) findViewById(R.id.category_tabs);
-        for ( String category : CATEGORIES ) {
-            tabLayout.addTab(tabLayout.newTab().setText(category));
+        ViewPager vp = (ViewPager) findViewById(R.id.pager);
+        if (vp != null) {
+            setupViewPager(vp);
         }
-        */
 
-        // Create the adapter that will return a fragment for each of the three
-        // primary sections of the activity.
-        mSectionsPagerAdapter = new
-                SectionsPagerAdapter(getSupportFragmentManager());
-
-        // Set up the ViewPager with the sections adapter.
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        /*
-        mViewPager.addOnPageChangeListener(
-                new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
-
-        // For each of the sections in the app, add a tab to the action bar.
-        for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
-            // Create a tab with text corresponding to the page title defined by
-            // the adapter. Also specify this Activity object, which implements
-            // the TabListener interface, as the callback (listener) for when
-            // this tab is selected.
-            tabLayout.addTab(
-                    tabLayout.newTab()
-                            .setText(mSectionsPagerAdapter.getPageTitle(i)));
-        }
-        */
-        diaToggle(findViewById(R.id.standard_button));
+        tabLayout = (TabLayout) findViewById(R.id.tabs);
+        tabLayout.setupWithViewPager(vp);
     }
 
     private void pickUtts() {
@@ -143,6 +125,16 @@ public class ChiCoWoZ extends FragmentActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void setupViewPager(ViewPager vp) {
+        Adapter adapter = new Adapter(getSupportFragmentManager());
+        for (String category : CATEGORIES) {
+            adapter.addFragment(new CategoryFragment(), category);
+        }
+        vp.setAdapter(adapter);
+
+    }
+
+    /*
     public void diaToggle(View view) {
         boolean isDia;
         Button standardButton = (Button) findViewById(R.id.standard_button);
@@ -161,32 +153,34 @@ public class ChiCoWoZ extends FragmentActivity {
             frags[i].changeButtons(isDia, pickedUtts[i]);
         }
     }
+    */
 
     /**
-     * A {@link FragmentStatePagerAdapter} that returns a fragment corresponding to
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    // TODO: move this outside?
-    public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
+    public class Adapter extends FragmentPagerAdapter {
+        private final List<Fragment> mFragments = new ArrayList<>();
+        private final List<String> mFragmentTitles = new ArrayList<>();
 
-        public SectionsPagerAdapter(FragmentManager fm) {
+        public Adapter(FragmentManager fm) {
             super(fm);
+        }
+
+        public void addFragment(Fragment fragment, String title) {
+            mFragments.add(fragment);
+            mFragmentTitles.add(title);
         }
 
         @Override
         public Fragment getItem(int position) {
-            Fragment newFrag = new CategoryFragment();
-            Bundle args = new Bundle();
-            args.putString(CategoryFragment.ARG_CATEGORY_NAME, CATEGORIES[position]);
-            newFrag.setArguments(args);
-            frags[position] = (CategoryFragment) newFrag;
-            return newFrag;
+            return mFragments.get(position);
         }
 
         @Override
         public int getCount() {
             // Show total number of pages.
-            return CATEGORIES.length;
+            return mFragments.size();
         }
 
         @Override
@@ -195,26 +189,17 @@ public class ChiCoWoZ extends FragmentActivity {
             if (position < 0 || position >= CATEGORIES.length) {
                 return null;
             }
-            return CATEGORIES[position].toUpperCase(l);
+            return mFragmentTitles.get(position).toUpperCase(l);
         }
     }
 
-    // TODO: move this outside?
+    /*
     public static class CategoryFragment extends Fragment {
 
         Button[] buttons;
 
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
         private static final String ARG_CATEGORY_NAME = "categoryName";
 
-        /**
-         * Returns a new instance of this fragment for the given section
-         * number.
-         */
-        /*
         public static CategoryFragment newInstance(String categoryName) {
             CategoryFragment fragment = new CategoryFragment();
             Bundle args = new Bundle();
@@ -225,7 +210,6 @@ public class ChiCoWoZ extends FragmentActivity {
 
         public CategoryFragment() {
         }
-        */
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -261,4 +245,5 @@ public class ChiCoWoZ extends FragmentActivity {
             }
         }
     }
+    */
 }
