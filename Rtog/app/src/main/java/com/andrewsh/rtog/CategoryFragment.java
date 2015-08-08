@@ -20,7 +20,7 @@ public class CategoryFragment extends Fragment {
         LinearLayout linearRoot = (LinearLayout) root;
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
-                ViewGroup.LayoutParams.WRAP_CONTENT);
+                0, 1f);
         String textDef = "THIS BUTTON IS BLANK!";
         for (int i = 0; i < ChiCoWoZ.BUTTONS_PER_PAGE; i++) {
             buttons[i] = new Button(getActivity());
