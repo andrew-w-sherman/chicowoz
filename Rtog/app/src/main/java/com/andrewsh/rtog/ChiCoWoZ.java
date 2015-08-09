@@ -35,21 +35,19 @@ public class ChiCoWoZ extends AppCompatActivity {
      * may be best to switch to a
      * {@link android.support.v13.app.FragmentStatePagerAdapter}.
      */
-    Adapter mSectionsPagerAdapter;
 
-    /**
-     * The {@link ViewPager} that will host the section contents.
-     */
-    ViewPager mViewPager;
-    TabLayout tabLayout;
-    CategoryFragment[] frags;
-    Utterance[][] pickedUtts;
-    ArrayList<ArrayList<Utterance>> includedUtts;
+    private TabLayout tabLayout;
+    private CategoryFragment[] frags;
+    public Utterance[][] pickedUtts;
+    private ArrayList<ArrayList<Utterance>> includedUtts;
+    boolean isDia;
+    private ViewPager vp;
 
     public static final int BUTTONS_PER_PAGE = 5;
     public static final String[] CATEGORIES =
         {"Questions", "Feedback", "Ideas"};
     private static final int[] INCLUDE_PAGES = {1};
+    private static final boolean IS_DIA_INITIALLY = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,21 +74,28 @@ public class ChiCoWoZ extends AppCompatActivity {
         setSupportActionBar(tb);
         final ActionBar ab = getSupportActionBar();
 
-        ViewPager vp = (ViewPager) findViewById(R.id.pager);
+        vp = (ViewPager) findViewById(R.id.pager);
         if (vp != null) {
             setupViewPager(vp);
         }
 
         tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(vp);
+
+        // initialize the buttons
+        diaInitialize();
     }
 
     private void pickUtts() {
-        // first, check all categories to be sure there's enough
+        // clean previous picked if any
+        for (int i = 0; i < CATEGORIES.length; i++)
+                pickedUtts[i] = new Utterance[BUTTONS_PER_PAGE];
+        // check all categories to be sure there's enough
         for (int i = 0; i < CATEGORIES.length; i++) {
             if(includedUtts.get(i).size() < BUTTONS_PER_PAGE)
                 new Exception().printStackTrace();
         }
+        // pick new utts
         Random ran = new Random();
         for (int i = 0; i < CATEGORIES.length; i++) {
             Utterance pick;
@@ -127,16 +132,17 @@ public class ChiCoWoZ extends AppCompatActivity {
 
     private void setupViewPager(ViewPager vp) {
         Adapter adapter = new Adapter(getSupportFragmentManager());
-        for (String category : CATEGORIES) {
-            adapter.addFragment(new CategoryFragment(), category);
+        for (int i = 0; i < CATEGORIES.length; i++) {
+            frags[i] = new CategoryFragment();
+            Bundle args = new Bundle(); args.putInt(CategoryFragment.POS_ARG, i);
+            frags[i].setArguments(args);
+            adapter.addFragment(frags[i], CATEGORIES[i]);
         }
         vp.setAdapter(adapter);
 
     }
 
-    /*
     public void diaToggle(View view) {
-        boolean isDia;
         Button standardButton = (Button) findViewById(R.id.standard_button);
         Button dialectButton = (Button) findViewById(R.id.dialect_button);
         if (view.getId() == R.id.standard_button) {
@@ -149,16 +155,29 @@ public class ChiCoWoZ extends AppCompatActivity {
             standardButton.setBackgroundColor(getResources().getColor(R.color.switch_thumb_disabled_material_dark));
             isDia = true;
         }
+        FragmentPagerAdapter adapter = (FragmentPagerAdapter)vp.getAdapter();
+        ((CategoryFragment) adapter.getItem(vp.getCurrentItem())).updateButtons();
+        /*
         for (int i = 0; i < frags.length; i++) {
-            frags[i].changeButtons(isDia, pickedUtts[i]);
+            frags[i].updateButtons();
         }
+        */
     }
-    */
 
-    /**
-     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
-     * one of the sections/tabs/pages.
-     */
+    private void diaInitialize() {
+        Button standardButton = (Button) findViewById(R.id.standard_button);
+        Button dialectButton = (Button) findViewById(R.id.dialect_button);
+        if (IS_DIA_INITIALLY) {
+            dialectButton.setBackgroundColor(getResources().getColor(R.color.accent_material_dark));
+            standardButton.setBackgroundColor(getResources().getColor(R.color.switch_thumb_disabled_material_dark));
+        }
+        else {
+            standardButton.setBackgroundColor(getResources().getColor(R.color.accent_material_dark));
+            dialectButton.setBackgroundColor(getResources().getColor(R.color.switch_thumb_disabled_material_dark));
+        }
+        isDia = IS_DIA_INITIALLY;
+    }
+
     public class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragments = new ArrayList<>();
         private final List<String> mFragmentTitles = new ArrayList<>();

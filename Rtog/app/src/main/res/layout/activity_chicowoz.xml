@@ -43,7 +43,9 @@
             <Button
                 android:id="@+id/standard_button"
                 android:text="@string/standard_text"
+                android:onClick="diaToggle"
                 android:textSize="20sp"
+                android:textColor="@color/dia_button_text"
                 android:drawableTop="@drawable/ic_home_white_48dp"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
@@ -52,7 +54,9 @@
             <Button
                 android:id="@+id/dialect_button"
                 android:text="@string/dialect_text"
+                android:onClick="diaToggle"
                 android:textSize="20sp"
+                android:textColor="@color/dia_button_text"
                 android:drawableTop="@drawable/ic_school_white_48dp"
                 style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="0dp"
