@@ -1,6 +1,7 @@
 package com.andrewsh.rtog;
 
 import android.app.Activity;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
+
+import java.util.Arrays;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -32,6 +35,13 @@ public class CategoryFragment extends Fragment {
             buttons[i] = new Button(getActivity());
             buttons[i].setText(textDef.toCharArray(), 0, textDef.length());
             buttons[i].setLayoutParams(params);
+            buttons[i].setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int pressed = Arrays.asList(buttons).indexOf(v);
+                    mCallback.onButton(position, pressed);
+                }
+            });
             linearRoot.addView(buttons[i]);
         }
         updateButtons();
@@ -51,23 +61,25 @@ public class CategoryFragment extends Fragment {
         }
     }
 
-    /*
+    // this is for sending the button events back to the activity
     OnButtonListener mCallback;
 
     public interface OnButtonListener {
-        public void onButton(int position);
+        public void onButton(int pane, int position);
     }
 
     @Override
     public void onAttach(Activity activity) {
+        super.onAttach(activity);
         try {
             mCallback = (OnButtonListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString() + " must implement OnButtonListener");
         }
     }
-    */
 
+    // this is all a little hacky but makes it so that the fragment is always
+    // updated when it's selected
     @Override
     public void setUserVisibleHint(boolean visible) {
         super.setUserVisibleHint(visible);

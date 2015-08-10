@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
+import android.content.Intent;
+import android.preference.PreferenceManager;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,7 +27,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v7.widget.Toolbar;
 
 
-public class ChiCoWoZ extends AppCompatActivity {
+public class ChiCoWoZ extends AppCompatActivity implements CategoryFragment.OnButtonListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -42,6 +44,7 @@ public class ChiCoWoZ extends AppCompatActivity {
     private ArrayList<ArrayList<Utterance>> includedUtts;
     boolean isDia;
     private ViewPager vp;
+    private WoZClient client;
 
     public static final int BUTTONS_PER_PAGE = 5;
     public static final String[] CATEGORIES =
@@ -51,6 +54,8 @@ public class ChiCoWoZ extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        client = new WoZClient(PreferenceManager.getDefaultSharedPreferences(this));
+
         // BACKGROUND LOGIC
         frags = new CategoryFragment[CATEGORIES.length];
         pickedUtts = new Utterance[CATEGORIES.length][BUTTONS_PER_PAGE];
@@ -124,6 +129,7 @@ public class ChiCoWoZ extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
             return true;
         }
 
@@ -157,11 +163,6 @@ public class ChiCoWoZ extends AppCompatActivity {
         }
         FragmentPagerAdapter adapter = (FragmentPagerAdapter)vp.getAdapter();
         ((CategoryFragment) adapter.getItem(vp.getCurrentItem())).updateButtons();
-        /*
-        for (int i = 0; i < frags.length; i++) {
-            frags[i].updateButtons();
-        }
-        */
     }
 
     private void diaInitialize() {
@@ -176,6 +177,14 @@ public class ChiCoWoZ extends AppCompatActivity {
             dialectButton.setBackgroundColor(getResources().getColor(R.color.switch_thumb_disabled_material_dark));
         }
         isDia = IS_DIA_INITIALLY;
+    }
+
+    public void onButton(int pane, int position) {
+        Utterance selected = pickedUtts[pane][position];
+        client.sendCommand(selected.commandName(!isDia));
+        pickUtts();
+        FragmentPagerAdapter adapter = (FragmentPagerAdapter)vp.getAdapter();
+        ((CategoryFragment) adapter.getItem(vp.getCurrentItem())).updateButtons();
     }
 
     public class Adapter extends FragmentPagerAdapter {
@@ -211,58 +220,4 @@ public class ChiCoWoZ extends AppCompatActivity {
             return mFragmentTitles.get(position).toUpperCase(l);
         }
     }
-
-    /*
-    public static class CategoryFragment extends Fragment {
-
-        Button[] buttons;
-
-        private static final String ARG_CATEGORY_NAME = "categoryName";
-
-        public static CategoryFragment newInstance(String categoryName) {
-            CategoryFragment fragment = new CategoryFragment();
-            Bundle args = new Bundle();
-            args.putString(ARG_CATEGORY_NAME, categoryName);
-            fragment.setArguments(args);
-            return fragment;
-        }
-
-        public CategoryFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_chicowoz, container, false);
-            LinearLayout root = (LinearLayout) rootView.findViewById(R.id.fragmentRoot);
-            buttons = new Button[BUTTONS_PER_PAGE];
-            String textDef = "THIS BUTTON IS BLANK!";
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                    ActionBar.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-            );
-            for ( Button button : buttons ) {
-                button = new Button(getActivity());
-                button.setText(textDef.toCharArray(), 0, textDef.length());
-                button.setLayoutParams(params);
-                // TODO: set onClick listener
-                root.addView(button);
-            }
-            return rootView;
-        }
-
-        public void changeButtons(boolean isDia, Utterance[] picked) {
-            String utterance;
-            for (int i = 0; i < buttons.length; i++) {
-                if (isDia) {
-                    utterance = picked[i].diaText;
-                }
-                else {
-                    utterance = picked[i].stdText;
-                }
-                buttons[i].setText(utterance.toCharArray(), 0, utterance.length());
-            }
-        }
-    }
-    */
 }
