@@ -47,6 +47,7 @@ public class ChiCoWoZ extends AppCompatActivity implements CategoryFragment.OnBu
     private WoZClient client;
 
     public static final int BUTTONS_PER_PAGE = 5;
+    public static final boolean IS_SCROLLING = true;
     public static final String[] CATEGORIES =
         {"Questions", "Feedback", "Ideas"};
     private static final int[] INCLUDE_PAGES = {1};

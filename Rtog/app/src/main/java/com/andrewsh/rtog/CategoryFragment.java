@@ -25,16 +25,30 @@ public class CategoryFragment extends Fragment {
                              Bundle savedInstanceState) {
         Bundle b = getArguments();
         position = b.getInt(POS_ARG);
-        View root = inflater.inflate(R.layout.fragment_category, container, false);
-        LinearLayout linearRoot = (LinearLayout) root;
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                ViewGroup.LayoutParams.MATCH_PARENT,
-                0, 1f);
+        View root;
+        LinearLayout linearRoot;
+        LinearLayout.LayoutParams params;
+        if (ChiCoWoZ.IS_SCROLLING) {
+            root = inflater.inflate(R.layout.fragment_category_scroll, container, false);
+            linearRoot = (LinearLayout) root.findViewById(R.id.linear_root);
+            params = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+        }
+        else {
+            root = inflater.inflate(R.layout.fragment_category, container, false);
+            linearRoot = (LinearLayout) root;
+            params = new LinearLayout.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT,
+                    0, 1f);
+        }
         String textDef = "THIS BUTTON IS BLANK!";
         for (int i = 0; i < ChiCoWoZ.BUTTONS_PER_PAGE; i++) {
             buttons[i] = new Button(getActivity());
             buttons[i].setText(textDef.toCharArray(), 0, textDef.length());
             buttons[i].setLayoutParams(params);
+            if (ChiCoWoZ.IS_SCROLLING)
+                buttons[i].setPadding(40, 100, 40, 100);
             buttons[i].setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
