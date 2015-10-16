@@ -5,8 +5,43 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context="com.andrewsh.toolboxwoz.Prescreen">
-
-    <TextView android:text="@string/hello_world" android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/category_description"
+        android:text="@string/category_description_default"
+        android:textSize="18dp"
+        android:textColor="@color/primary_text_default_material_light"/>
+    <TableLayout
+        android:id="@+id/selection_table"
+        android:layout_below="@+id/category_description"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
+    <TextView
+        android:id="@+id/button_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_description"
+        android:textSize="18dp"
+        android:textColor="@color/primary_text_default_material_light"
+        android:layout_below="@+id/selection_table"/>
+    <LinearLayout
+        android:id="@+id/dialect_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_description"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/standard_select"
+            android:text="@string/standard_text"
+            android:layout_weight="1"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/dialect_select"
+            android:text="@string/dialect_text"
+            android:layout_weight="1"
+            android:layout_width="1dp"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
 </RelativeLayout>

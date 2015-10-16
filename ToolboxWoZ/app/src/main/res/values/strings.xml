@@ -6,4 +6,12 @@
     <string name="title_activity_prescreen">Prescreen</string>
     <string name="title_activity_category_picker">CategoryPicker</string>
     <string name="title_activity_category_screen">CategoryScreen</string>
+    <string name="standard_text">Standard</string>
+    <string name="dialect_text">Dialect</string>
+    <string name="name_prompt">Name: </string>
+    <string name="school_prompt">School: </string>
+    <string name="class_prompt">Class: </string>
+    <string name="submit_text">Submit</string>
+    <string name="button_description">And speak using...</string>
+    <string name="category_description_default">If a child is being DEFAULT, Alex should DEFAULT...</string>
 </resources>

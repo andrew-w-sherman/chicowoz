@@ -27,6 +27,9 @@
         <activity
             android:name=".CategoryScreen"
             android:label="@string/title_activity_category_screen" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.andrewsh.toolboxwoz.CategoryPicker" />
         </activity>
     </application>
 
